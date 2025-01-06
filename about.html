@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title> <!-- Title will be dynamically updated -->
+    <link rel="icon" href="gallery/logo2.jpg" type="image/x-icon"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageTitles = {
+                "index.html": "Home - PINADIGITALPRESENCE",
+                "about.html": "About Me - PINADIGITALPRESENCE",
+                "hobby.html": "Hobby - PINADIGITALPRESENCE",
+                "gallery.html": "Gallery - PINADIGITALPRESENCE",
+                "contact.html": "Contact Me - PINADIGITALPRESENCE",
+            };
+
+            // Get current file name (e.g., "about.html") from URL
+            const currentFile = window.location.pathname.split("/").pop() || "index.html";
+
+            // Dynamically update the <title> tag based on the current file
+            document.title = pageTitles[currentFile] || "PINADIGITALPRESENCE";
+        });
+    </script>
+</head>
+    <style>
+        /* Body and General Layout */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            background-image: url('gallery/bg1.jpg'); /* Set background image for the body */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-position: center; /* Center the background image */
+            color: white; /* Default color for visibility over background */
+        }
+
+        /* Navbar Styling */
+        .nav {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the navbar */
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            color: white; /* Text color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for contrast */
+        }
+
+        .nav .logo img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent hover effect */
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Home Page Content Styling */
+        .home-content {
+            min-height: calc(100vh - 60px); /* Adjust height to exclude navbar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .home-content h2 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px;
+            color: #333;
+        }
+
+        .content-left {
+            flex: 0.65;
+        }
+
+        .box {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            width: 600px; /* Keep as is */
+            height: auto; /* Adjust to text content */
+            margin: 30px auto;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .box h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .box p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+				.content-right {
+			flex: 0.35;
+			display: flex;
+			justify-content: flex-end; /* Align image to the right */
+			align-items: center;
+			position: sticky;
+			top: 40px; 
+		}
+
+		/* Profile image style remains unchanged */
+		.profile-picture {
+			width: 500px;
+			height: 800px;
+			object-fit: cover;
+			border: 5px solid #000;
+			border-radius: 15px;
+			box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		}
+
+		.profile-picture:hover {
+			transform: scale(1.05) rotate(4deg);
+			box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.3);
+		}
+
+        /* Footer Styling */
+    .footer {
+        background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .footer a:hover {
+        color: #ffd36b;  /* Golden color on hover */
+    }
+
+    .footer .footer-links {
+        margin-top: 10px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="logo">
+            <img src="gallery/logo2.jpg" alt="Logo"> 
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="container">
+        <!-- Left Content -->
+        <div class="content-left">
+            <div class="box">
+                <h3>Get to Know Me</h3>
+                <p>Hello, my name is Afrina Izzati Binti Ashazry, and I am 20 years old. I have four siblings, and I am the second child in the family.
+                One thing I really love is traveling and it’s how I escape boredom and always find new adventures.
+                I’m also a huge fan of food hunting! I love exploring different cuisines and enjoying the variety of food the world has to offer.</p>
+            </div>
+
+            <div class="box">
+                <h3>Educational Background</h3>
+                <p>I am currently pursuing a Diploma in Information Management at UITM Rembau Campus. Throughout my studies, I’ve gained valuable skills,
+                and one of the things I’m most proud of is learning how to create my own personal website—who would have thought?</p>
+            </div>
+
+            <div class="box">
+                <h3>My Goals</h3>
+                <p>My goals for the future include pursuing a degree in web content and becoming a more productive person in the coming year.
+                I’m determined to work harder and stay focused to achieve everything I aspire to in the future.</p>
+            </div>
+        </div>
+
+        <!-- Right Content (Profile Picture) -->
+        <div class="content-right">
+            <img src="gallery/gambarsaya3.jpg" alt="My Picture" class="profile-picture">
+        </div>
+    </div>
+
+    	<!-- Footer Section (Row 3) -->
+		<div class="footer">
+			<p>&copy; 2024 PINA DIGITAL PRESENCE. All rights reserved.</p>
+		</div>
+
+</body>
+</html>

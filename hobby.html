@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title> <!-- Title will be dynamically updated -->
+    <link rel="icon" href="gallery/logo2.jpg" type="image/x-icon"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageTitles = {
+                "index.html": "Home - PINADIGITALPRESENCE",
+                "about.html": "About Me - PINADIGITALPRESENCE",
+                "hobby.html": "Hobby - PINADIGITALPRESENCE",
+                "gallery.html": "Gallery - PINADIGITALPRESENCE",
+                "contact.html": "Contact Me - PINADIGITALPRESENCE",
+            };
+
+            // Get current file name (e.g., "about.html") from URL
+            const currentFile = window.location.pathname.split("/").pop() || "index.html";
+
+            // Dynamically update the <title> tag based on the current file
+            document.title = pageTitles[currentFile] || "PINADIGITALPRESENCE";
+        });
+    </script>
+</head>
+	<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="go-up-btn">
+    Go Back Up
+	</button>
+    <style>
+        /* Body and General Layout */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            background-image: url('gallery/bg1.jpg'); /* Set background image for the body */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-position: center; /* Center the background image */
+            color: white; /* Default color for visibility over background */
+        }
+
+        /* Navbar Styling */
+        .nav {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the navbar */
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            color: white; /* Text color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for contrast */
+        }
+
+        .nav .logo img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent hover effect */
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Home Page Content Styling */
+        .home-content {
+            min-height: calc(100vh - 60px); /* Adjust height to exclude navbar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .home-content h2 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+		
+		
+        /* Hobby Page Content */
+			.hobby-content {
+        padding: 40px;
+        display: grid;
+        grid-template-rows: repeat(4, auto);
+        gap: 30px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #000; /* Change to black */
+    }
+
+    .hobby-box {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f1f1f1;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        color: #000; /* Change to black inside the boxes */
+        transition: transform 0.3s ease-in-out;
+        width: 1200px; /* Reduced width */
+        height: 3200px; /* Increased height */
+        margin: 0 auto; /* Centers the box */
+    }
+
+    .hobby-box h2, .hobby-box h4, .hobby-box p {
+        color: #000; /* Ensure headings and paragraphs are black */
+    }
+
+        .hobby-box p {
+            font-size: 1.2rem;
+            line-height: 2.6;
+        }
+
+        /* Footer Styling */
+    .footer {
+        background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .footer a:hover {
+        color: #ffd36b;  /* Golden color on hover */
+    }
+
+    .footer .footer-links {
+        margin-top: 10px;
+    }
+		
+		.go-up-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #000;
+        color: white;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+    }
+    
+    .go-up-btn:hover {
+        background-color: #e0e0e0;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="logo">
+            <img src="gallery/logo2.jpg" alt="My Logo"> 
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="hobby.html" class="active">Hobby</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </div>
+	
+	
+		<!-- Hobby Content Section -->  
+		<div class="hobby-content">
+		  <!-- Text Box for "Listening to Songs" -->
+		  <div style="display: flex; align-items: flex-start; gap: 20px;">
+			<!-- Left Side Box -->
+			<div style="width: 30%; padding: 20px; background-color: #f8f8f8; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+			  <p style="font-size: 1.2rem; line-height: 1.8; color: #000;">
+				Listening to songs is one of my favorite hobbies. Music keeps me company when I’m bored or even while I’m busy with other activities—it’s like a 
+				soundtrack to my day. Over time, I’ve developed a deep admiration for my favorite artists, whose music truly inspires and uplifts me.
+			  </p>
+
+      <!-- Navigation Chart -->
+      <div style="margin-top: 20px;"> 
+    <h4 style="margin-bottom: 10px; color: #000; font-size: 2.5rem;">Top 3 fav Artist:</h4>
+    <ul style="list-style-type: none; padding: 0; font-size: 1.8rem; margin-bottom: 30px;"> 
+        <li><a href="#the-weeknd" style="text-decoration: none; color: #555;">The Weeknd</a></li>
+        <li><a href="#ariana-grande" style="text-decoration: none; color: #555;">Ariana Grande</a></li>
+        <li><a href="#lauv" style="text-decoration: none; color: #555;">Lauv</a></li>
+    </ul>
+    
+    <h4 style="margin-bottom: 10px; color: #000; font-size: 1.8rem; margin-top: 80px;">My Go-To Tunes:</h4>
+    <ul style="list-style-type: none; padding: 0; font-size: 1.1rem;">
+        <li style="margin-bottom: 20px;">
+            <a style="text-decoration: none; color: #800020;">The Weeknd</a>
+            <ul style="margin-top: 10px;">
+                <li>I Was Never There</li>
+                <li>Heartless</li>
+                <li>Starboy</li>
+                <li>The Hills</li>
+            </ul>
+        </li>
+        <li style="margin-bottom: 20px;">
+            <a style="text-decoration: none; color: #800020;">Ariana Grande</a>
+            <ul style="margin-top: 10px;">
+                <li>No Tears Left to Cry</li>
+                <li>One Last Time</li>
+                <li>Everytime</li>
+                <li>The Boy Is Mine</li>
+            </ul>
+        </li>
+        <li>
+            <a style="text-decoration: none; color: #800020;">Lauv</a>
+            <ul style="margin-top: 10px;">
+                <li>I Like Me Better</li>
+                <li>Mean It</li>
+                <li>All 4 Nothing (I'm So In Love)</li>
+                <li>Chasing Fire</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    </div>
+	
+    <!-- Main Hobby Box -->
+    <div class="hobby-box" style="width: 65%;" align="center">
+      <h2>MY TOP 3 FAV ARTIST</h2>
+      <p></p>
+
+      <!-- The Weeknd Songs Section (Apple Music Embed) -->
+<div id="the-weekend" style="text-align: center; background-color: #f8f8f8; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <h4 style="color: #333; margin-bottom: 10px;">The Weeknd</h4>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
+        <img src="gallery/tw2.jpg" alt="The Weeknd Image 1" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/tw3.jpg" alt="The Weeknd Image 2" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/tw4.jpg" alt="The Weeknd Image 3" style="width: 30%; height: auto; border-radius: 8px;">
+    </div>
+    <p style="font-size: 1.1rem; color: #555;">Stream some of my favorite tracks by The Weeknd:</p>
+
+    <!-- Embed from Apple Music: Song 1 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/i-was-never-there/1363309866?i=1363310498"></iframe>
+    
+    <!-- Embed from Apple Music: Song 2 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/heartless/1499378108?i=1499378597"></iframe>
+   
+</div>
+
+
+
+      <!-- Ariana Grande Container -->
+<div id="ariana-grande" style="text-align: center; background-color: #f8f8f8; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <h4>Ariana Grande</h4>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <img src="gallery/ari1.jpg" alt="Ariana Grande Image 1" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/ari2.jpg" alt="Ariana Grande Image 2" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/ari3.jpg" alt="Ariana Grande Image 3" style="width: 30%; height: auto; border-radius: 8px;">
+    </div>
+    <p style="font-size: 1.1rem; color: #555;">Stream some of my favorite tracks by Ariana Grande:</p>
+
+    <!-- Embed from Apple Music: Song 1 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/one-last-time/1440852353?i=1440852679"></iframe>
+
+    <!-- Embed from Apple Music: Song 2 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/the-boy-is-mine/1771037153?i=1771037508"></iframe>
+</div>
+
+	  
+	  
+	  
+
+      <!-- Lauv Container --> 
+<div id="lauv" style="text-align: center; background-color: #f8f8f8; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    <h4>Lauv</h4>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <img src="gallery/lauv1.jpg" alt="Lauv Image 1" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/lauv2.jpg" alt="Lauv Image 2" style="width: 30%; height: auto; border-radius: 8px;">
+        <img src="gallery/lauv3.jpg" alt="Lauv Image 3" style="width: 30%; height: auto; border-radius: 8px;">
+    </div>
+     <p style="font-size: 1.1rem; color: #555;">Stream some of my favorite tracks by Lauv:</p>
+
+    <!-- Embed from Apple Music: Song 1 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/mean-it/1480846311?i=1480846822"></iframe>
+
+    <!-- Embed from Apple Music: Song 2 -->
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/my/album/i-like-me-better/1771701881?i=1771702162"></iframe>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Smooth Scroll CSS -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+
+    	<!-- Footer Section (Row 3) -->
+		<div class="footer">
+			<p>&copy; 2024 PINA DIGITAL PRESENCE. All rights reserved.</p>
+		</div>
+
+</body>
+</html>

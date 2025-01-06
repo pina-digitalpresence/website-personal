@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title> <!-- Title will be dynamically updated -->
+    <link rel="icon" href="gallery/logo2.jpg" type="image/x-icon"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageTitles = {
+                "index.html": "Home - PINADIGITALPRESENCE",
+                "about.html": "About Me - PINADIGITALPRESENCE",
+                "hobby.html": "Hobby - PINADIGITALPRESENCE",
+                "gallery.html": "Gallery - PINADIGITALPRESENCE",
+                "contact.html": "Contact Me - PINADIGITALPRESENCE",
+            };
+
+            // Get current file name (e.g., "about.html") from URL
+            const currentFile = window.location.pathname.split("/").pop() || "index.html";
+
+            // Dynamically update the <title> tag based on the current file
+            document.title = pageTitles[currentFile] || "PINADIGITALPRESENCE";
+        });
+    </script>
+</head>
+    <!-- Font Awesome Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Body and General Layout */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('gallery/bg1.jpg'); /* Add a background image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Navbar Styling */
+        .nav {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for contrast */
+        }
+
+        .nav .logo img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Contact Page Content Styling */
+        .contact-content {
+            min-height: calc(100vh - 60px); /* Adjust height to exclude navbar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .contact-left, .contact-right {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 48%;
+        }
+
+        .contact-left {
+            font-size: 18px;
+        }
+
+        .contact-left h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-left table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .contact-left table td {
+            padding: 10px;
+        }
+
+        .contact-left table input, .contact-left table textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .contact-left textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-left button {
+            background-color: #f1c40f; /* Highlight color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-left button:hover {
+            background-color: #e0b90f;
+        }
+
+        .contact-right h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-right p {
+            margin-bottom: 10px;
+        }
+
+        .contact-right a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        .contact-right a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-right .social-links {
+            margin-top: 20px;
+            font-size: 30px;
+        }
+
+        .contact-right .social-links i {
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-right .social-links i:hover {
+            color: #f1c40f; /* Hover effect color */
+        }
+
+        /* Add space between the left and right container */
+        .contact-left {
+            margin-right: 4%; /* Add gap between containers */
+        }
+
+        /* Footer Styling */
+    .footer {
+        background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .footer a:hover {
+        color: #ffd36b;  /* Golden color on hover */
+    }
+
+    .footer .footer-links {
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="logo">
+            <img src="gallery/logo2.jpg" alt="My Logo"> 
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html" class="active">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- Contact Page Content -->
+    <div class="contact-content">
+        <div class="contact-container">
+            <!-- Left Section - Send Message Form -->
+            <div class="contact-left">
+                <h2>Send a Message 💌</h2>
+                <form action="submit_form.php" method="POST">
+                    <table>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="subject">Subject:</label></td>
+                            <td><input type="text" id="subject" name="subject" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="message">Message:</label></td>
+                            <td><textarea id="message" name="message" required></textarea></td>
+                        </tr>
+                    </table>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right Section - Contact Info -->
+            <div class="contact-right">
+                <h2>Contact Me</h2>
+                <p>If you would like to reach out to me, feel free to send an email to:</p>
+                <p><a href="mailto:afrina0304@gmail.com">afrina0304@gmail.com</a></p>
+                <p>You can also connect with me through my social media profiles:</p>
+
+                <!-- Social Media Icons -->
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@.thewf?_t=ZS-8spXeYHeiU3&_r=1" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fynazattieyy?igsh=MXc4NnFndGxwZGcwNg%3D%3D&utm_source=qr" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    	<!-- Footer Section (Row 3) -->
+		<div class="footer">
+			<p>&copy; 2024 PINA DIGITAL PRESENCE. All rights reserved.</p>
+		</div>
+
+</body>
+</html>
